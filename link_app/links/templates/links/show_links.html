@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ваши ссылки</title>
+</head>
+<body>
+<h1>Ваши ссылки</h1>
+<ul>
+    {% for i in links %}
+        <p>Оригинальная ссылка: {{i.original_url}} || Новая ссылка: {{i.short_url}}</p>
+    {% endfor %}
+</ul>
+</body>
+</html>
