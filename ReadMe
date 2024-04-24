@@ -18,3 +18,13 @@
 Имеется файл requirements.txt со всеми зависимостями. Подготовлены dockerfile и docker-compose
 
 Все требования к работе выполнены.
+
+Для использования программы:
+ 1) скачайте репозиторий
+ 2) установите виртуальное окруж(python -m venv venv)
+ 3) в терминале пропишите  pip install requirements.txt
+ 4) cd link_app
+ 5) python manage.py runserver
+ 6) python manage.py check_database
+ 7) перейдите по ссылке http://127.0.0.1:8000/users/ и пользуйтесь программой
+Или установите через докер.
