@@ -1,8 +1,11 @@
 from datetime import datetime
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from . import made_short_link
 from users.models import Users
 from .models import Links
@@ -53,6 +56,7 @@ def user_links(request):
     return HttpResponse("Ссылки пользователя")
 
 ##############################################api#############
-class ApiLinks(viewsets.ModelViewSet):
+class ApiLinks(generics.RetrieveAPIView):
     queryset = Links.objects.all()
     serializer_class = LinkApiSerializer
+    lookup_field = 'owner_id'
