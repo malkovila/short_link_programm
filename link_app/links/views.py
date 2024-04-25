@@ -56,7 +56,7 @@ def user_links(request):
     return HttpResponse("Ссылки пользователя")
 
 ##############################################api#############
-class ApiLinks(generics.RetrieveAPIView):
+class ApiLinks(generics.ListAPIView):
     queryset = Links.objects.all()
     serializer_class = LinkApiSerializer
     lookup_field = 'owner_id'
